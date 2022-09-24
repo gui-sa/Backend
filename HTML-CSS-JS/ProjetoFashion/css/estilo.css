@@ -1,0 +1,64 @@
+body {
+    width: 60%;
+    margin: auto;
+}
+
+#topo{
+    background-color: black;
+    margin: 0px;   
+    position: relative;
+    height: 80px;
+}
+
+#topo img{
+    border: solid 1px white;
+    position: absolute;
+    top: 25%;
+    right: 70%;
+    margin: 0px;
+}
+
+#img-abertura {
+    margin: 0px;
+}
+
+#img-abertura img{
+    width: 100%;
+}
+
+#nav-topo {
+    width: 70%;
+    height: 80px;
+    position: absolute;
+    right: 0px;
+}
+
+.but{
+    background-color: aliceblue;
+    position: absolute;
+    right: 0px;
+    top: 25%;
+    padding: 5px;
+}
+
+.but a{
+    display: block;
+    background-color: aqua;
+    color: rgb(0, 0, 0);
+}
+
+
+.but1{
+    position: absolute;
+    right: 5%;
+}
+
+.but2{
+    position: absolute;
+    right: 25%;
+}
+
+.but3{
+    position: absolute;
+    right: 45%;
+}
