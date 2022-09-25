@@ -61,6 +61,7 @@ body {
     font-style: normal;
     text-decoration: solid;
     text-transform: uppercase;
+    transition: color .25s linear;
 }
 
 .but a:hover{

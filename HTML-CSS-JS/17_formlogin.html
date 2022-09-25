@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title> Forms </title>
+    <meta charset="utf-8">
+    <meta name="author" content="Guilherme">
+    <meta name="Description" content="Learning basics">
+    <meta name="keywords" content="html5, tecnologia">
+    <style>
+        .formlogin{
+            width: 250px;
+            margin: 50px auto 0px;
+        }
+        #user, #pass, .btn{
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .btn{
+            margin-top: 15px;
+        }
+    </style>
+
+</head> 
+
+<body>
+    <h1>Exemplo de Formulário</h1>
+    <form action="#" method="post" class="formlogin">
+        <fieldset>
+            <legend>Login</legend>
+            <label for="user">Digite o seu usuário</label>
+            <input type="text" id="user" name="user">
+            <label for="pass">Digite o seu usuário</label>
+            <input type="password" id="pass" name="pass">
+            <input type="submit" value="Logar" class="btn">
+        </fieldset>
+    </form>
+</body>
+
+</html>
