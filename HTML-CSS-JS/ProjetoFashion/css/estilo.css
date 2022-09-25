@@ -1,25 +1,32 @@
 body {
-    width: 60%;
+    width: 1024px;
     margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+/* HEADER: */
+
 #topo{
-    background-color: black;
-    margin: 0px;   
+    background-color: #07151e;
+    margin: 80px 0 0 0;   
+    padding: 0;
     position: relative;
-    height: 80px;
+    height: 60px;
 }
 
 #topo img{
-    border: solid 1px white;
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 40px;
     position: absolute;
-    top: 25%;
-    right: 70%;
-    margin: 0px;
+    top: 10%;
+    right: 75%;
 }
 
 #img-abertura {
-    margin: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 #img-abertura img{
@@ -29,22 +36,35 @@ body {
 #nav-topo {
     width: 70%;
     height: 80px;
+    margin: 0;
+    padding: 0;
     position: absolute;
-    right: 0px;
+    top: 0;
+    right: 0;
 }
 
 .but{
-    background-color: aliceblue;
     position: absolute;
-    right: 0px;
-    top: 25%;
-    padding: 5px;
+    top: 1%;
+    padding: 0;
+    margin: 0;
 }
 
 .but a{
     display: block;
-    background-color: aqua;
-    color: rgb(0, 0, 0);
+    color: #2a4558;
+    margin: 0;
+    padding: 20px;
+    letter-spacing: 5px;
+    font-size: 15px;
+    font-weight: bolder;
+    font-style: normal;
+    text-decoration: solid;
+    text-transform: uppercase;
+}
+
+.but a:hover{
+    color: #456379;
 }
 
 
@@ -55,10 +75,159 @@ body {
 
 .but2{
     position: absolute;
-    right: 25%;
+    right: 30%;
 }
 
 .but3{
     position: absolute;
-    right: 45%;
+    right: 55%;
+}
+
+/* MAIN: */
+
+main {
+    text-align: center;
+
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 950; 
+    margin: 80px 0 0 0 ;
+    padding: 0px;
+    letter-spacing: 1px;
+}
+
+main article p{
+    margin: 30px 100px 80px 100px;
+    font-size: 18px;
+    font-weight: lighter;
+    color: #2a4558;
+    line-height: 30px;   
+}
+
+#gallery-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+#gallery-container .card{
+    width: 25%;
+    position: absolute;
+    top: 0;
+
+}
+
+#gallery-container .card1{
+    right: 5%;
+}
+
+#gallery-container .card2{
+    right: 37.5%;
+}
+
+#gallery-container .card3{
+    left: 5%;
+}
+
+#gallery-container .card img{
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 200px;
+}
+
+#gallery-container .card p{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #2a4558;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+#gallery-container .card .label{
+    color: #57758a;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+
+#detail {
+    text-align: left;
+    margin: 0; 
+    padding: 0;
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+#detail h2{
+    color: rgb(250, 244, 237);
+    margin: 0px;
+    padding: 100px 0 0 10%;
+    font-size: 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 50px;
+    position: relative  ;
+    z-index: 2;
+}
+
+#detail p{
+    color: rgb(250, 244, 237);
+    text-align: left;
+    font-size: 15px;
+    line-height: 25px;
+    margin: 40px 0 0 10%;
+    padding: 0;
+    width: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+
+#detail img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+address {
+    margin: 50px 0;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+/*FOOTER: */
+
+footer {
+    color: rgb(250, 244, 237);
+    background-color: #07151e;
+    margin: 80px 0;
+    padding: 0;
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+
+footer p{
+    position: absolute;
+    top: 10%;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    color: #456379;
+    letter-spacing: 3px;
 }
