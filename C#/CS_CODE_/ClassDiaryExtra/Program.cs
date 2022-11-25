@@ -11,16 +11,16 @@ namespace ClasseDiario
             System.Console.WriteLine("Bem vindo ao diario de classe!");
 
             decimal media = default(decimal);
-            decimal nota1 = InputHandler.ReceberNota($"\nQual a primeira nota de prova? (utilize o ponto para dividir decimal)\nMédia atual: {media.ToString("f2")} pontos\nValor: ");
+            decimal nota1 = InputHandler.ReceberNota($"\nQual a primeira nota de prova?\nMédia atual: {media.ToString("f2")} pontos\nValor: ");
             media = Matematica.Media(nota1);
 
-            decimal nota2 = InputHandler.ReceberNota($"\nQual a segunda nota de prova? (utilize o ponto para dividir decimal)\nMédia atual: {media.ToString("f2")} pontos\nValor: ");
+            decimal nota2 = InputHandler.ReceberNota($"\nQual a segunda nota de prova?\nMédia atual: {media.ToString("f2")} pontos\nValor: ");
             media = Matematica.Media(nota1, nota2);
 
-            decimal nota3 = InputHandler.ReceberNota($"\nQual a terceira nota de prova? (utilize o ponto para dividir decimal)\nMédia atual: {media.ToString("f2")} pontos\nValor: ");
+            decimal nota3 = InputHandler.ReceberNota($"\nQual a terceira nota de prova?\nMédia atual: {media.ToString("f2")} pontos\nValor: ");
             media = Matematica.Media(nota1, nota2, nota3);
 
-            decimal nota4 = InputHandler.ReceberNota($"\nQual a ultima nota de prova? (utilize o ponto para dividir decimal)\nMédia atual: {media.ToString("f2")} pontos\nValor: ");
+            decimal nota4 = InputHandler.ReceberNota($"\nQual a ultima nota de prova?\nMédia atual: {media.ToString("f2")} pontos\nValor: ");
             media = Matematica.Media(nota1, nota2, nota3, nota4);
 
             decimal notaMinimaNecessaria = 7.0M;

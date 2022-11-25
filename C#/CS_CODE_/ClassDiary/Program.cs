@@ -15,18 +15,18 @@ namespace Classe
             System.Console.WriteLine($"Qual a nota da segunda prova? (Por favor, use o ponto como separador decimal, exemplo: 9.7)\nMédia atual: {mediaFinal.ToString("f2")} pontos");
             decimal nota2 = decimal.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            mediaFinal = (nota1+nota2)/2.0F;
+            mediaFinal = (nota1+nota2)/2.0M;
             System.Console.WriteLine($"Qual a nota da terceira prova? (Por favor, use o ponto como separador decimal, exemplo: 9.7)\nMédia atual: {mediaFinal.ToString("f2")} pontos");
             decimal nota3 = decimal.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            mediaFinal = (nota1+nota2+nota3)/3.0F;
+            mediaFinal = (nota1+nota2+nota3)/3.0M;
             System.Console.WriteLine($"Qual a nota da quarta prova? (Por favor, use o ponto como separador decimal, exemplo: 9.7)\nMédia atual: {mediaFinal.ToString("f2")} pontos");
             decimal nota4 = decimal.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            mediaFinal =(nota1+nota2+nota3+nota4)/4.0F ;
+            mediaFinal =(nota1+nota2+nota3+nota4)/4.0M ;
 
             
-            decimal notaMinimaRequerida = 7.0F;
+            decimal notaMinimaRequerida = 7.0M;
             decimal notaRecuperacao = default(decimal);
             if (mediaFinal>=notaMinimaRequerida){
                 System.Console.WriteLine($"É com prazer que informamos que o aluno foi aprovado!\nMédia final de {mediaFinal.ToString("f2")} pontos.");
@@ -34,7 +34,7 @@ namespace Classe
             }else{
                 System.Console.WriteLine($"\nO aluno tem direito a uma prova de recuperação! Média final atual: {mediaFinal.ToString("f2")} pontos.\nQual a nota da prova de recuperação? (Por favor, use o ponto como separador decimal, exemplo: 9.7)");
                 notaRecuperacao = decimal.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                mediaFinal = (mediaFinal+notaRecuperacao)/2.0F;
+                mediaFinal = (mediaFinal+notaRecuperacao)/2.0M;
             }
 
             if(mediaFinal>=notaMinimaRequerida){
