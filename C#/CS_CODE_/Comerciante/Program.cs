@@ -8,7 +8,7 @@ namespace ComercianteVendas
         public static void Main(string[] args)
         {
 
-            decimal custoProduto = InputHandler.ReceberPreco("\nQual o preço de compra do produto?(Utilize ponto para separar decimal)\nPreço (R$): ");
+            decimal custoProduto = InputHandler.ReceberPreco("\nQual o preço de compra do produto?\nPreço (R$): ");
             decimal precoVenda = default(decimal);
             if (custoProduto < 20.0M)
             {
