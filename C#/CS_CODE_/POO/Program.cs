@@ -9,35 +9,45 @@ namespace POOExercise
     {
         public static void Main(string[] args)
         {
-            Correntista pessoa1 = new Correntista("999.999.999-99");
-            Correntista pessoa2 = new Correntista("999.999.999-98");
+            
+            List<Correntista> clientes = new List<Correntista>();
+            clientes.Add(new Correntista("99999999999"));
+            clientes.Add(new Correntista("99999999998"));
+            clientes.Add(new Correntista("99999999997"));
             despesa energia = new despesa(130.00M,"Energia da Concessionaria");
             despesa esgoto = new despesa(80.00M,"Conta de agua");
             despesa club = new despesa(250.00M,"Laser");
             despesa bug = new despesa(-3000.0M,"Oi eu sou um bug");
 
 
-            System.Console.WriteLine(pessoa1.buscaValorSaldo());
-            bool sucess = pessoa1.adicionarSaldo(1000.00M);
-            sucess = pessoa1.pagarConta(1000.00M);
-            sucess = pessoa1.pagarConta(10.00M);
+            System.Console.WriteLine(clientes[0].buscaValorSaldo());
+            bool sucess = clientes[0].adicionarSaldo(1000.00M);
+            sucess = clientes[0].pagarConta(1000.00M);
+            sucess = clientes[0].pagarConta(10.00M);
 
-            sucess = pessoa1.inserirDespesa(energia);
-            sucess = pessoa1.inserirDespesa(esgoto);
-            sucess = pessoa1.inserirDespesa(club);
-            sucess = pessoa1.inserirDespesa(bug);
+            sucess = clientes[0].inserirDespesa(energia);
+            sucess = clientes[0].inserirDespesa(esgoto);
+            sucess = clientes[0].inserirDespesa(club);
+            sucess = clientes[0].inserirDespesa(bug);
 
-            System.Console.WriteLine(pessoa1.somarDespesas());
+            System.Console.WriteLine(Correntista.encontraCorretista(clientes,"99999999999").somarDespesas());            
         }
     }
     public class Correntista{
         private decimal saldo { get; set; }
-        private string cpf { get; set; }
+        private string cpf;
+        private string Cpf { 
+            get{return this.cpf;} 
+            set{
+                this.cpf = value;
+            } 
+        }
         private List<despesa> despesas { get; set; }
 
         public Correntista(string cpf){
+            //checar se cpf esta no formato adequado e seguindo regras de negocio.. Se nao, nao construir.
             this.despesas = new List<despesa>();
-            this.cpf = cpf;
+            this.Cpf = cpf;
         }
         public decimal buscaValorSaldo(){
             return this.saldo;
@@ -63,25 +73,12 @@ namespace POOExercise
                 this.saldo -= valorConta;
                 return true;
             }
-            System.Console.WriteLine($"Saldo insuficiente. Não foi possível pagar a conta de valor {valorConta}");
+            System.Console.WriteLine($"Saldo insuficiente. Não foi possível pagar a conta no valor de {valorConta.ToString("c")}");
             return false;
         }
-        public static List<Correntista> encontraCorretista(){
-            
-
-
-
-
-
-
-
-
-
-
-
-            
-            
-            return null;
+        public static Correntista encontraCorretista(List<Correntista> correntistas,string cpf){
+            Correntista correntista = correntistas.FirstOrDefault(cor => cor.Cpf==cpf);
+            return correntista;         
         }
         public bool inserirDespesa(despesa desp){
             if(desp.Valor>0){
