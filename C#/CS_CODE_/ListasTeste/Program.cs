@@ -15,11 +15,16 @@ namespace Testezinhos
             colaboradores.Add(new Funcionarios("Joao", 1200.00M));
             colaboradores.Add(new Funcionarios("Pedro", 1030.00M));
             colaboradores.Add(new Funcionarios("Jose", 2000.00M));
+            colaboradores.Add(new Gerente(1.3M,"Seu Paulo", 2000.00M));
 
             foreach (Funcionarios func in colaboradores)
             {
+                System.Console.Write($"{func.GetType()} ");
                 System.Console.WriteLine(func.ToString());
+                
             }
+
+
 
 
             DateTime agora = DateTime.Now;
@@ -27,7 +32,8 @@ namespace Testezinhos
             Funcionarios.AdicionarDependente(colaboradores, "Maicon", new Familia("Maicon Jr", 2020, 01, 02));
             Funcionarios.AdicionarDependente(colaboradores, "Maicon", new Familia("Maicon Jr mais velho", 1999, 12, 04));
             Funcionarios.AdicionarDependente(colaboradores, "Mon", new Familia("asdasd", 1929, 12, 04));
-            Funcionarios.AdicionarDependente(colaboradores, "Jose", new Familia("Assad", 200, 11, 04));
+            Funcionarios.AdicionarDependente(colaboradores, "Jose", new Familia("Assad", 2000, 11, 04));
+            Funcionarios.AdicionarDependente(colaboradores, "Seu Paulo", new Familia("Primo", 2001, 11, 04));
 
             foreach (Familia fam in colaboradores[0].Dependentes)
             {
@@ -37,9 +43,9 @@ namespace Testezinhos
             System.Console.WriteLine();
             foreach (var col in colaboradores.Where(c => c.Dependentes.Any()).ToList())
             {
-                foreach (var fam in col.Dependentes)
+                foreach (var fam in col.Dependentes.OrderBy(f=>f.nascimento).ToList())
                 {
-                    System.Console.WriteLine(fam.Nome);
+                    System.Console.WriteLine(fam);
                 }
             }
 
@@ -81,6 +87,16 @@ namespace Testezinhos
         }
 
     }
+    class Gerente : Funcionarios
+    {
+
+        public decimal bonus { get; set; }
+
+        public Gerente(decimal bonus, string nome, decimal salario) : base(nome, salario)
+        {
+            this.bonus = bonus;
+        }
+    }
     class Familia
     {
         public string Nome { get; set; }
@@ -89,6 +105,11 @@ namespace Testezinhos
         {
             this.Nome = nome;
             this.nascimento = new DateTime(Ano, Mes, Dia);
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Nome} - {this.nascimento}";
         }
     }
 }
