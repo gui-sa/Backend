@@ -307,7 +307,7 @@ p2.start()
 x = Sinalt(np.array([11,7,0,-1,4]), "Sinal x[n]", posInit=3)
 h = Sinalt(np.array([3,0,-5,2]), "Sinal h[n]", posInit=-2)
 conv1 = ManipuladorSinalt.ConvSignal(x,h)
-p3 = multiprocessing.Process(target=Plotter.PlotSigs,args = [x,h, conv1],kwargs= {'substitle':"Demonstração passo a passo convolucao"})
+p3 = multiprocessing.Process(target=Plotter.PlotSigs,args = [x,h, conv1],kwargs= {'substitle':"Exercicio 1"})
 p3.start()
 
 #-----------
