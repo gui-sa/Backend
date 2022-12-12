@@ -284,23 +284,36 @@ class Plotter:
 
 
 #Testando a convolucao passo a passo (por exemplo do caderno):
-x = Sinalt(np.array([3,4,3,2]), "Sinal x[n]", posInit=1)
-x2 = ManipuladorSinalt.InvertSignal(x)
+x1 = Sinalt(np.array([3,4,3,2]), "Sinal h[n]", posInit=1)
+x2 = ManipuladorSinalt.InvertSignal(x1)
 x2.name = "h[-k]"
 x3 = ManipuladorSinalt.Desloca(x2,2)
 x3.name = "h[-k+2]"
-h = Sinalt(np.array([1,1,1,1,1]), "Sinal h[n]", posInit=2)
-x4 = ManipuladorSinalt.MultiplicaSinais(x3,h)
+h1 = Sinalt(np.array([1,1,1,1,1]), "Sinal x[n]", posInit=2)
+x4 = ManipuladorSinalt.MultiplicaSinais(x3,h1)
 x4.name = "x[k]*h[-k+2]"
-c1 = ManipuladorSinalt.ConvSignal(h,x)
-p1 = multiprocessing.Process(target=Plotter.PlotSigs,args = [x,h,c1],kwargs= {'substitle':"Operação Convolução entre dois sinais"})
+c1 = ManipuladorSinalt.ConvSignal(h1,x1)
+c2 = ManipuladorSinalt.ConvSignal(x1,h1)
+p1 = multiprocessing.Process(target=Plotter.PlotSigs,args = [x1,h1,c1,c2],kwargs= {'substitle':"Operação Convolução entre dois sinais"})
 p1.start()
-p2 = multiprocessing.Process(target=Plotter.PlotSigs,args = [x,x2,x3,x4],kwargs= {'substitle':"Demonstração passo a passo convolucao"})
+p2 = multiprocessing.Process(target=Plotter.PlotSigs,args = [h1,x1,x2,x3,x4],kwargs= {'substitle':"Demonstração passo a passo convolucao"})
 p2.start()
 
 #---------------
 
 
+
+#Exercicio 1:
+x = Sinalt(np.array([11,7,0,-1,4]), "Sinal x[n]", posInit=3)
+h = Sinalt(np.array([3,0,-5,2]), "Sinal h[n]", posInit=-2)
+conv1 = ManipuladorSinalt.ConvSignal(x,h)
+p3 = multiprocessing.Process(target=Plotter.PlotSigs,args = [x,h, conv1],kwargs= {'substitle':"Demonstração passo a passo convolucao"})
+p3.start()
+
+#-----------
+
+
 #Join dos processos auxiliares:
 p1.join()
 p2.join()
+p3.join()
