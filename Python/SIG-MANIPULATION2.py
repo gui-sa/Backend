@@ -178,13 +178,32 @@ class ManipuladorSinalt:
             Retorna novo objeto Sinalt
         '''
         limiteInferior = -1*(sig1.posInit + sig2.posInit)
-        totalLen = sig1.len + sig2.len
+        totalLen = sig1.len + sig2.len 
         Out = Sinalt(np.zeros(totalLen),f"Conv {sig1.name} com {sig2.name}", posInit= limiteInferior)
-        sig2Neg = ManipuladorSinalt.InvertSignal(sig2)
         
-        ManipuladorSinalt.SubConv(sig1,sig2,0)
+        ref = 0
+        for n in range(Out.posInit, Out.posInit + Out.len):
+            Out.intensity[ref] = ManipuladorSinalt.SubConv(sig1,sig2,n)
+            ref += 1
+
         return Out
     
+
+    @staticmethod
+    def SubConv (estatico,dinamico,pos)-> object:
+        ''' Recebe o x[k], o h[k] e o n desejado 
+            Faz x[k]*h[-k+n]
+            Retorna a soma da multiplicacao dos sinais de uma iteracao da convolucao
+        '''
+        Neg = ManipuladorSinalt.InvertSignal(dinamico)
+        deslocado = ManipuladorSinalt.Desloca(Neg,pos)
+        mult = ManipuladorSinalt.MultiplicaSinais(estatico,deslocado)
+        soma = 0
+        for i in range(mult.len):
+            soma += mult.intensity[i]
+
+        return soma 
+
     @staticmethod
     def InvertSignal (sig1:object)-> object:
         ''' Recebe um Sinalt
@@ -197,16 +216,6 @@ class ManipuladorSinalt:
             Out.intensity[i-1]=sig1.intensity[-i]
         
         return Out
-
-    def SubConv (estatico,dinamico,pos)-> object:
-        ''' Recebe o x[k], o h[-k] e o n desejado 
-            Faz x[k]*h[-k+n]
-            Retorna a soma da multiplicacao dos sinais de uma iteracao da convolucao
-        '''
-        deslocado = ManipuladorSinalt.Desloca(dinamico,pos)
-
-        pass
-
 
     @staticmethod
     def MultiplicaSinais (sig1:object, sig2:object) -> object:
@@ -223,7 +232,9 @@ class ManipuladorSinalt:
         
 
     @staticmethod
-    def Multiplica(s1,s2):
+    def Multiplica(s1:object,s2:object) -> object:
+        ''' Não utilize essa funcao diretamente.. Utilize a MultiplicaSinais
+        '''
         Out = Sinalt(np.copy(s1.intensity),"Output", posInit= -s1.posInit, escala = s1.escala)
 
         for i in range(Out.len):
@@ -272,15 +283,24 @@ class Plotter:
         
 
 
-#Instanciando os sinais do trabalho:
-x = Sinalt(np.array([11,7,0,-1,4]), "Sinal x[n]", posInit=3)
-h = Sinalt(np.array([3,0,-5,2]), "Sinal h[n]", posInit=-2)
-a = Sinalt(np.array([1,1,1]), "Sinal a[n]", posInit=2)
-c1 = ManipuladorSinalt.MultiplicaSinais(a,x)
-p1 = multiprocessing.Process(target=Plotter.PlotSigs,args = [x,a,c1],kwargs= {'substitle':"Sinais originais"})
+#Testando a convolucao passo a passo (por exemplo do caderno):
+x = Sinalt(np.array([3,4,3,2]), "Sinal x[n]", posInit=1)
+x2 = ManipuladorSinalt.InvertSignal(x)
+x2.name = "h[-k]"
+x3 = ManipuladorSinalt.Desloca(x2,2)
+x3.name = "h[-k+2]"
+h = Sinalt(np.array([1,1,1,1,1]), "Sinal h[n]", posInit=2)
+x4 = ManipuladorSinalt.MultiplicaSinais(x3,h)
+x4.name = "x[k]*h[-k+2]"
+c1 = ManipuladorSinalt.ConvSignal(h,x)
+p1 = multiprocessing.Process(target=Plotter.PlotSigs,args = [x,h,c1],kwargs= {'substitle':"Operação Convolução entre dois sinais"})
 p1.start()
+p2 = multiprocessing.Process(target=Plotter.PlotSigs,args = [x,x2,x3,x4],kwargs= {'substitle':"Demonstração passo a passo convolucao"})
+p2.start()
+
 #---------------
 
 
 #Join dos processos auxiliares:
 p1.join()
+p2.join()
