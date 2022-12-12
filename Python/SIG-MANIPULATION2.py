@@ -341,18 +341,49 @@ p5.start()
 #Exercicio 2c:
 inicio = 0
 fim = 10
-Out2 = FuncToSinalt.Impulso(inicio,fim,0,1,-1," ")
+Out3 = FuncToSinalt.Impulso(inicio,fim,0,1,-1," ")
 for n in range(inicio,fim+1):
     novoPulso = FuncToSinalt.Impulso(inicio,fim,n,1,-n," ")
     novoPulso2 = FuncToSinalt.Degrau(inicio,fim,1,1,-2, " ")
-    novoPulso = ManipuladorSinalt.MultiplicaSinais(novoPulso,novoPulso2) 
-    Out2 = ManipuladorSinalt.SomaSinais(Out2,novoPulso)
+    pulsoRes = ManipuladorSinalt.MultiplicaSinais(novoPulso,novoPulso2)
+    Out3 = ManipuladorSinalt.SomaSinais(Out3,pulsoRes)
 novoPulso = FuncToSinalt.Impulso(inicio,fim,1,1,-4," ")
-Out2 = ManipuladorSinalt.SomaSinais(Out2,novoPulso)
-Out2.name = "n*u[n-2] + I[n-4]"
-p6 = multiprocessing.Process(target=Plotter.PlotSigs,args = [Out2],kwargs= {'substitle':"Exercicio 2.c"})
+Out3 = ManipuladorSinalt.SomaSinais(Out3,novoPulso)
+Out3.name = "n*u[n-2] + I[n-4]"
+p6 = multiprocessing.Process(target=Plotter.PlotSigs,args = [Out3],kwargs= {'substitle':"Exercicio 2.c"})
 p6.start()
 #-----------
+
+# Ex3 Comutatividade
+com1 = ManipuladorSinalt.ConvSignal(Out1,Out2)
+com2 = ManipuladorSinalt.ConvSignal(Out2,Out1)
+
+p7 = multiprocessing.Process(target=Plotter.PlotSigs,args = [com1,com2],kwargs= {'substitle':"Exercicio 3 - Comutatividade"})
+p7.start()
+#------------------
+
+# Ex3 Associatividade
+com1 = ManipuladorSinalt.ConvSignal(Out1,Out2)
+com1 = ManipuladorSinalt.ConvSignal(com1,Out3)
+com2 = ManipuladorSinalt.ConvSignal(Out2,Out3)
+com2 = ManipuladorSinalt.ConvSignal(Out1,com2)
+p8 = multiprocessing.Process(target=Plotter.PlotSigs,args = [com1,com2],kwargs= {'substitle':"Exercicio 3 - Associatividade"})
+p8.start()
+#------------------
+
+# Ex4 Distributividade
+com1 = ManipuladorSinalt.ConvSignal(Out1,ManipuladorSinalt.SomaSinais(Out2,Out3))
+com2 = ManipuladorSinalt.SomaSinais(ManipuladorSinalt.ConvSignal(Out1,Out2),ManipuladorSinalt.ConvSignal(Out1,Out3))
+p9 = multiprocessing.Process(target=Plotter.PlotSigs,args = [com1,com2],kwargs= {'substitle':"Exercicio 3 - Distributividade"})
+p9.start()
+#------------------
+
+# Ex4 Deslocamento
+com1 = ManipuladorSinalt.ConvSignal(ManipuladorSinalt.Desloca(Out1,-3),ManipuladorSinalt.Desloca(Out2,-2))
+com2 = ManipuladorSinalt.Desloca(ManipuladorSinalt.ConvSignal(Out1,Out2),-5)
+p10 = multiprocessing.Process(target=Plotter.PlotSigs,args = [com1,com2],kwargs= {'substitle':"Exercicio 3 - Deslocamento"})
+p10.start()
+#------------------
 
 
 #Join dos processos auxiliares:
@@ -362,3 +393,7 @@ p3.join()
 p4.join()
 p5.join()
 p6.join()
+p7.join()
+p8.join()
+p9.join()
+p10.join()
