@@ -284,19 +284,19 @@ class Plotter:
 
 
 #Testando a convolucao passo a passo (por exemplo do caderno):
-x1 = Sinalt(np.array([3,4,3,2]), "Sinal h[n]", posInit=1)
-x2 = ManipuladorSinalt.InvertSignal(x1)
-x2.name = "h[-k]"
-x3 = ManipuladorSinalt.Desloca(x2,2)
-x3.name = "h[-k+2]"
-h1 = Sinalt(np.array([1,1,1,1,1]), "Sinal x[n]", posInit=2)
-x4 = ManipuladorSinalt.MultiplicaSinais(x3,h1)
-x4.name = "x[k]*h[-k+2]"
-c1 = ManipuladorSinalt.ConvSignal(h1,x1)
-c2 = ManipuladorSinalt.ConvSignal(x1,h1)
-p1 = multiprocessing.Process(target=Plotter.PlotSigs,args = [x1,h1,c1,c2],kwargs= {'substitle':"Operação Convolução entre dois sinais"})
+ex1 = Sinalt(np.array([3,4,3,2]), "Sinal h[n]", posInit=1)
+ex2 = ManipuladorSinalt.InvertSignal(ex1)
+ex2.name = "h[-k]"
+ex3 = ManipuladorSinalt.Desloca(ex2,2)
+ex3.name = "h[-k+2]"
+eh1 = Sinalt(np.array([1,1,1,1,1]), "Sinal x[n]", posInit=2)
+ex4 = ManipuladorSinalt.MultiplicaSinais(ex3,eh1)
+ex4.name = "x[k]*h[-k+2]"
+ec1 = ManipuladorSinalt.ConvSignal(eh1,ex1)
+ec2 = ManipuladorSinalt.ConvSignal(ex1,eh1)
+p1 = multiprocessing.Process(target=Plotter.PlotSigs,args = [ex1,eh1,ec1,ec2],kwargs= {'substitle':"Operação Convolução entre dois sinais"})
 p1.start()
-p2 = multiprocessing.Process(target=Plotter.PlotSigs,args = [h1,x1,x2,x3,x4],kwargs= {'substitle':"Demonstração passo a passo convolucao"})
+p2 = multiprocessing.Process(target=Plotter.PlotSigs,args = [eh1,ex1,ex2,ex3,ex4],kwargs= {'substitle':"Demonstração passo a passo convolucao"})
 p2.start()
 
 #---------------
@@ -312,8 +312,53 @@ p3.start()
 
 #-----------
 
+#Exercicio 2a:
+inicio = 0
+fim = 15
+Out1 = FuncToSinalt.Impulso(inicio,fim,0,1,-1," ")
+for n in range(inicio,fim+1):
+    novoPulso = FuncToSinalt.Impulso(inicio,fim,n*np.sin(n*np.pi/2),1,-n," ")
+    Out1 = ManipuladorSinalt.SomaSinais(Out1,novoPulso)
+Out1.name = "n*sen(n*pi/2)"
+p4 = multiprocessing.Process(target=Plotter.PlotSigs,args = [Out1],kwargs= {'substitle':"Exercicio 2.a"})
+p4.start()
+#-----------
+
+
+#Exercicio 2b:
+inicio = 0
+fim = 10
+Out2 = FuncToSinalt.Impulso(inicio,fim,0,1,-1," ")
+for n in range(inicio,fim+1):
+    novoPulso = FuncToSinalt.Impulso(inicio,fim,3*(0.4**n),1,-n," ")
+    Out2 = ManipuladorSinalt.SomaSinais(Out2,novoPulso)
+Out2.name = "3*(0.4^n)*u(n)"
+p5 = multiprocessing.Process(target=Plotter.PlotSigs,args = [Out2],kwargs= {'substitle':"Exercicio 2.b"})
+p5.start()
+#-----------
+
+
+#Exercicio 2c:
+inicio = 0
+fim = 10
+Out2 = FuncToSinalt.Impulso(inicio,fim,0,1,-1," ")
+for n in range(inicio,fim+1):
+    novoPulso = FuncToSinalt.Impulso(inicio,fim,n,1,-n," ")
+    novoPulso2 = FuncToSinalt.Degrau(inicio,fim,1,1,-2, " ")
+    novoPulso = ManipuladorSinalt.MultiplicaSinais(novoPulso,novoPulso2) 
+    Out2 = ManipuladorSinalt.SomaSinais(Out2,novoPulso)
+novoPulso = FuncToSinalt.Impulso(inicio,fim,1,1,-4," ")
+Out2 = ManipuladorSinalt.SomaSinais(Out2,novoPulso)
+Out2.name = "n*u[n-2] + I[n-4]"
+p6 = multiprocessing.Process(target=Plotter.PlotSigs,args = [Out2],kwargs= {'substitle':"Exercicio 2.c"})
+p6.start()
+#-----------
+
 
 #Join dos processos auxiliares:
 p1.join()
 p2.join()
 p3.join()
+p4.join()
+p5.join()
+p6.join()
