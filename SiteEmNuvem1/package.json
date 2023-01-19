@@ -1,0 +1,11 @@
+{
+  "name": "sitemnuvem",
+  "version": "1.0.0",
+  "description": "Exercicio para praticar criar sites usando diversas ferramentas e colocando na nuvem para que as pessoas possam acessar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guilherme Salomao Agostini",
+  "license": "ISC"
+}
