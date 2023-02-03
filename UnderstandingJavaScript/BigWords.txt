@@ -1,0 +1,46 @@
+Words that are more complicated than it sounds:
+
+Sintax Parser: reads your code and determines what it does , and, if its sintax is right!
+    It translates your code into Computer Instructions (via compiler)
+    Sometimes the compiler might do some extra things... And you need to know it.
+
+Lexical Environment: It refers to the Environment (or the scope) of the thing you are into
+    Where it is written phisically... ex:
+        function a(){
+            // has outer Environment to global context
+        }
+        function b (){
+            // has outer Environment to global context
+        }
+        function c(){
+            // has outer Environment to global context
+            function d(){
+                // has outer Environment to function c()
+            }
+        }
+        // that diference is caused due lexical Environment
+
+Execution Context: A wrapper to help manage the code that is winning.
+    Checks the lexical Environments... The one that is running will be chosen and controlled by execution Context.
+
+
+Single Threaded, Sincronous Execution: On command executed at time. And in order... From top to bottom.
+
+Invocation: Calling a function
+
+Variable Environment: where is the variable valid.
+
+Scope Chain: When you want to get a value of a variable that already exist in olders context (without creating other new varible in this new context). In this case, this variable value will look to variable value of its near Outer Environment!!
+    "Who created me?"
+
+Assincronous Callbacks: More than one command at a time.
+
+Rendering Engine: It comes together with the browser and is the code that shows  thing in the screens
+
+HTTP Request: Code specialized in dealing with http requests
+
+Dynamic Typing: You dont put the type... The engine figures it out during execution
+
+Static Typing:  You tell the engine what type is it, and it cant be changed later.
+
+Primitive Type: Is a type of data tha represents a SINGLE data. Diferent of object.

@@ -1,0 +1,76 @@
+Name/Value Pair: name that match to a UNIQUE VALUE
+    Address = 'Bazinga - 100'
+
+Objects: Collection of Name/Value Pair. (In JS)
+    Address:
+    {
+        Street:'Bazinga',
+        Number: 100,
+        Apartment:
+        {
+            Floor: 3,
+            Number: 13,
+        }
+    }
+
+Global Environment: It runs inside a execution context. It is accessible anywhere in the code.
+    It creates a global Object
+    It creates special variable 'this'.
+        Usually, by default in global level its value is window... Windows of the browser
+
+Window: Object that refers to browser window.
+    When you are using others frameworks, the window object (global object) is diferent... But, there will be always one.
+
+Global Object: Is created by Global Environment/Executor
+
+Global: something that are not inside a function
+
+Tab: each tab is a separate process, in other words, it is another global indepedent context.
+
+Variables outside a funtion get atached to  the global object
+
+Outer Environment: It is a reference to the oldest execution context. 
+
+Hoisting: First the javascript is separate memory for each var without running by Exercution Context.
+    1) Creationg Phase: Global Object, this, Outer Environment, parser recognizes variables and function and set up memory space for them!
+        So, this variables and functions already have the vars and function before running it.
+        Due the javascript doesnt know how many space it needs for its variables, it just put a placeholder named: undefined;
+            All varibles are initially setted  as undefined 
+        Funtions are sitting in memory entirely
+    2) Running Phase: single threaded, line by line from top to down.
+    Bad idea to count on hoisting!!
+
+
+Placeholder undefined: it is not a string! It is a especial value to refers to it... Not defininig is diferent from not undefined
+    You can reference it by keyword undefined to compare things
+    DO NOT set something as undefined!
+
+When you run a code it creates de Global Execution Context.. When you call a function, it creates a new execution context just for that function...
+    A Stack is created... The new Context atop the older context... It is named Execution Stack
+    All the functions is already up in the memory at global execution context creation
+    Every execution context has its own variable Environment (scope)
+        Each one is dintict, unique and independent from each other;
+
+
+let: works just like var and is setted up just like var in the creation phase (and so, initially, setted as undefined). However, when let is used, javascript blocks the hoisting.
+    declared between blocks... {}... is valid just inside it.
+        So, when you use it inside a for, each one is a new variable...
+            BLOCK SCOPING
+
+Javascript has hooks with Rendering Engine and HTTP Requests...
+
+Assincronous: Others codes and engines of Browser running tasks
+    We are talking about Rendering Engines, HTTP Requests, events Queue. 
+    They are assigned when the Execution Context Stack is finished.
+
+Event Queue: sits inside javascript engine... notifications of events that might be happening.
+    The browser Assincronously, puts events in this events Queue
+
+
+JavaScript uses Dynamic Typing.
+
+There are 5 Primitive Types in JS (even thought you dont choose it directly):
+    1) undefined
+    2) NULL : variable has no data
+    3) Boolean
+    4) 
