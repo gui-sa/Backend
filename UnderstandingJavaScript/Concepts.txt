@@ -1,3 +1,10 @@
+Links Tops:
+    https://developer.mozilla.org/pt-BR/
+
+JavaScript is the programming language that runs scripts inside a browser.
+    That way, you can send functional scripts to the client's machine run, instead of your server.
+    You can also use it to perform animations and others interesting things in the browser. 
+
 Name/Value Pair: name that match to a UNIQUE VALUE
     Address = 'Bazinga - 100'
 
@@ -66,13 +73,15 @@ Assincronous: Others codes and engines of Browser running tasks
 Event Queue: sits inside javascript engine... notifications of events that might be happening.
     The browser Assincronously, puts events in this events Queue
 
-
 JavaScript uses Dynamic Typing.
 
 There are 5 Primitive Types in JS (even thought you dont choose it directly):
-    1) undefined
-    2) NULL : variable has no data
-    3) Boolean
-    4) Strings
-    5) Numbers
-    6) Simbols
+    1) undefined --  variable was created but not assigned
+    2) NULL -- variable has no data but has existed
+    3) Boolean -- true/false
+    4) Strings -- cadeia de chars
+    5) Numbers -- always float
+    6) Simbols -- ?
+
+Precedence and Associtivity: The Higher, the one that is called first.
+    https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
