@@ -73,4 +73,6 @@ There are 5 Primitive Types in JS (even thought you dont choose it directly):
     1) undefined
     2) NULL : variable has no data
     3) Boolean
-    4) 
+    4) Strings
+    5) Numbers
+    6) Simbols
