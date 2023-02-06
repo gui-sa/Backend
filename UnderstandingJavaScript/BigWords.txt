@@ -44,3 +44,5 @@ Dynamic Typing: You dont put the type... The engine figures it out during execut
 Static Typing:  You tell the engine what type is it, and it cant be changed later.
 
 Primitive Type: Is a type of data tha represents a SINGLE data. Diferent of object.
+
+Operators: they are functions (thta returns somethings), reduced for infix, prefix or postfix symbol.
