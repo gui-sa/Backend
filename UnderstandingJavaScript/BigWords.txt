@@ -51,4 +51,19 @@ Operator Precedence: which operator function gets called firts
 
 Associtivity Operator: from left to right or right to left
 
-Coercion: Converting a type to one type to another
+Coercion: 
+console.log(person[address][city])Converting a type to one type to another
+
+Namespace: Container for Variables and function
+    JavaScript dont have namespace thought because it can be simulated
+
+
+JSON: JavaScript Object Notation: inspired by object notation
+    However JSON != object but they are not the same. You need to convert them up
+
+FirstClassFunctions everything you can do with other types... You can create funtions on the fly
+
+Expression: A unit of code that results in a value
+    Ends up creating a value
+    
+Function Statement: Do work

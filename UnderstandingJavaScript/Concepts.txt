@@ -1,7 +1,7 @@
 Links Tops:
     https://developer.mozilla.org/pt-BR/
 
-JavaScript is the programming language that runs scripts inside a browser.
+JavaScript is the programming language that runs scripts inside a browser :: in other world it is client side processing!
     That way, you can send functional scripts to the client's machine run, instead of your server.
     You can also use it to perform animations and others interesting things in the browser. 
 
@@ -85,3 +85,33 @@ There are 5 Primitive Types in JS (even thought you dont choose it directly):
 
 Precedence and Associtivity: The Higher, the one that is called first.
     https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+Default Values: Each var or has default value when converted to others types (coeecions)
+
+Samaness Compatison: When using === sameness comparison you avoid the coercion and then the type are also compared. This avoids BUGS.
+
+Objects and Functions they are related.
+
+Objects are colection of name-value pairs :: they have and address
+    Primitive :: property :: they have one address
+        Another child object can be also a property
+    Method ::  Funtions connected to an object :: they have address
+
+
+Computed Member Access Operator: these are the bracket [] ... It creates a reference to something as property
+    You can create objects thru strings passed dinamicly
+Member Access Operator: Used to access properties and methods of and object: .
+    You can create a fixed name to be a property
+
+Shorthand Object : Curly Brace {} is used to create an object;
+
+Funtions in JavaScript are objects
+    Primitive
+    Object
+    Others Functions
+    Name: can be anonymous
+    Code.. especial propety thar are invocable using ()
+    You can have a function statement in which just do work and dont return nothing
+        You can have a function expression, that return something
+
+        

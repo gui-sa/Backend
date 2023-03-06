@@ -1,0 +1,1 @@
+Faking Namespaces: Using objects
