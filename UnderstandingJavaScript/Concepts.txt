@@ -111,7 +111,58 @@ Funtions in JavaScript are objects
     Others Functions
     Name: can be anonymous
     Code.. especial propety thar are invocable using ()
+        A net execution context is created. (Creationg Phase)
+            Variable Environment : news ones
+            Outer Environment: lexical envioronment
+            'this' is created => a variable. It points to a diferent object dependending on how the function was invoked;
     You can have a function statement in which just do work and dont return nothing
         You can have a function expression, that return something
 
+By value vs by reference
+	BY VALUE: A variable has a memory location.
+		se a = 10
+		b = a
+		b tera um novo local na memoria e o valor de a sera copiado e atribuido
+	By Reference: works for all objects. They has a memory location
+		se a = new Abject()
+		b = a
+		b tera a mesma referencia e se eu alterar o a, b vai alterar tambem. nesse caso os valores nao sao copiados e sim as referencias;
+
+THIS keyword.
+    this outside any function will appoint to window object.
+    inside a function it still will point to window (if simply invoked)
+    IF the function is inside an object it will point to the parent object!
+        
+
+Arrays: collection of things insider of it = using []
+    In JS you can put in a array whatever type you want.
+
+Default arguments can be done using || statement:
+    function(name) = {
+        name = name||"Esse eh o valor default";
+    }
+
+
+Execution Context is created (function)
+    Variable Environment
+    'this'
+    Outer Environment
+    'arguments'
+        Array like: acts like array, but it is not.
+        You can use arguments to avoid running a function by comparing the value or legnth of the array
+        Is getting deprecated.
+
+SPREAD OPERATOR ...NomeVAR: its used in the argumetns to express extra arguments... will be treated as a list
+
+Function Overloading: JS doesnt have any: functions of the same name however with diferent number of parameters (and in some case, difewrent types)
+    doesnt work in js because functions are objects
+    We can simulate something like that by design patterns
+
+
+Sintax Parsers: There are a JS engine that parsers your code and turns it into machine code.
+    JS parses your code character by character assuming things...
+
+DANGEROUS THINGS:
+    Automatic semicolon assertions (;): You dont need to put it, because it usually assumes it for you, HOWEVER, it is dangerous! ALWAYS put ; Dont let JS engine decide to you in your place.
+        Mainly if there are a carriage return... \n in which it usually assumes as ;
         
