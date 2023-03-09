@@ -1,1 +1,5 @@
 Faking Namespaces: Using objects
+
+WhiteSpace: invisibçe chars that create space in your code.
+    Usually, JS engine ignores them... But be aware because JS might consider it a ;
+    
