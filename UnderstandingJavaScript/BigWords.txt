@@ -72,3 +72,7 @@ Mutate: To change something; Just it.
 
 arguments: Another name for parameters (you pass to a function).
     In JS arguments contains all the parameters.
+
+Callback Function: A function that is called as soon as a function triggers something!
+
+Function Currying : Creating a function copy of an existing function however with some preset properties!

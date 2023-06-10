@@ -76,12 +76,12 @@ Event Queue: sits inside javascript engine... notifications of events that might
 JavaScript uses Dynamic Typing.
 
 There are 5 Primitive Types in JS (even thought you dont choose it directly):
-    1) undefined --  variable was created but not assigned
-    2) NULL -- variable has no data but has existed
-    3) Boolean -- true/false
-    4) Strings -- cadeia de chars
-    5) Numbers -- always float
-    6) Simbols -- ?
+    1. undefined --  variable was created but not assigned
+    2. NULL -- variable has no data but has existed
+    3. Boolean -- true/false
+    4. Strings -- cadeia de chars
+    5. Numbers -- always float
+    6. Simbols -- ?
 
 Precedence and Associtivity: The Higher, the one that is called first.
     https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
@@ -115,6 +115,15 @@ Funtions in JavaScript are objects
             Variable Environment : news ones
             Outer Environment: lexical envioronment
             'this' is created => a variable. It points to a diferent object dependending on how the function was invoked;
+        They also have some "methods" called:
+        .bind()
+            It binds a function to an object properties... including `this` property
+            It also can be used to create a Currying function!
+            check bindFunction1 to more details!
+        .call()
+            It calls a function binding it to some object
+        .apply()
+        
     You can have a function statement in which just do work and dont return nothing
         You can have a function expression, that return something
 
@@ -165,4 +174,40 @@ Sintax Parsers: There are a JS engine that parsers your code and turns it into m
 DANGEROUS THINGS:
     Automatic semicolon assertions (;): You dont need to put it, because it usually assumes it for you, HOWEVER, it is dangerous! ALWAYS put ; Dont let JS engine decide to you in your place.
         Mainly if there are a carriage return... \n in which it usually assumes as ;
-        
+    
+
+Safe Code IIFE and packages:
+    when you call script inside and html things gets only stacked one on another one...
+    That makes extremmely easy to mix up variables names and actually break something.
+    The trick is, create every script inside an IIFE.
+    That way JS creates a new executable context that has a separated scope!
+    (funtion(...atr){
+        //codes
+    })();
+
+Closure: It is an effect of js that happens when a context is created and while in it, some object is created (due some past actions or properties) that context so comes to an end, however its object no.
+    But, that object rememenbers some varibles and properties from past contexts!
+    That is enclosure
+    Example:
+
+    function greetFactory(language){
+        language = language || "en";
+        return function(firstName,lastName){
+            switch(language){
+                case "en":
+                    console.log(`Hello ${firstName}!`);
+                    break;
+
+                case "es":
+                    console.log(`Hola ${firstName}`);
+                    break;
+                default:
+                    throw new Error("Language not found!");
+                    break;
+            }
+        }
+    }
+
+    Even tho it is not the best factory... It is a good example to explain closure.
+
+    Other good example: look at ClosureAndCallback exercise;
