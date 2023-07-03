@@ -119,7 +119,7 @@ Funtions in JavaScript are objects
         .bind()
             It binds a function to an object properties... including `this` property
             It also can be used to create a Currying function!
-            check bindFunction1 to more details!
+            check FunctionBindCallApply1 and 2 for more details!
         .call()
             It calls a function binding it to some object
         .apply()
@@ -211,3 +211,40 @@ Closure: It is an effect of js that happens when a context is created and while 
     Even tho it is not the best factory... It is a good example to explain closure.
 
     Other good example: look at ClosureAndCallback exercise;
+
+
+    There are good functional programming practices in https://underscorejs.org/ and https://lodash.com/
+        To extends it, you simply add it in the hmtl file using:
+            <script src="scriptJs.js"></script>
+            when done that way, you simply uses it as the browser will stack one over another.
+
+    Classical Inheritance (Js dont use those) is when an object get access to  the properties and methods of another object (in class terms)
+        Very verbose
+        Leads to design patterns
+        Types:
+            public
+            private 
+            protected
+            interface
+
+    Java Script uses Prototypal Inheritance : as evertithing on JS is an object... everything has an "proto"!
+        Flexible
+        Extensible
+        Easy to understand
+
+        All Object has a "Proto" property in which references another object
+            Proto is an object an could stand by its own
+                As proto is an obj, it has its own "proto" property... and so on
+                    It generates a "prototype chain"
+            
+        So, prototype inheritance is when an "proto" property points to another obj
+        The object __proto__ (Dont ever use this way) should point to its SUPERCLASS
+            'this' will point to the subclass!
+            Even tho you shouldnt use __proto__ directly for performance purposes, there is a demonstration in "inheritance1"
+        A "proto" object of a pattern object will have its builtins methods and properties... as a "proto" function pattern object will have those too!
+    
+    Reflection and Extend in prototypal inheritance
+        Reflection is when an object looks upon itself.
+        One way to use inheritance in JS is using instead of "__proto__"  the _.extendOwn from underscorejs library
+            It uses reflection to increase its object properties and methods without using __proto__ in which is unperforming
+        Look for an example in "ReflectionExtensionInheritance"

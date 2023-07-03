@@ -1,4 +1,4 @@
-Faking Namespaces: Using objects
+Faking Namespaces: Using objects... In this case an IIFE
 
 WhiteSpace: invisibçe chars that create space in your code.
     Usually, JS engine ignores them... But be aware because JS might consider it a ;

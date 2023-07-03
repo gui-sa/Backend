@@ -29,6 +29,7 @@
         //logName(); will throw an error... again. The linkage is only up to that line.
         logName.call(person1, "relogio", "celular"); //It runs with person1 binded. proceeding is their atributes
 
+        logName.apply(person1, ["colar", "truck-kun"]); //It runs with person1 binded. proceeding is their atributes
 
 
 
