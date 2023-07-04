@@ -23,10 +23,27 @@
     console.log(pedro.fullName());
 
 
-    //To make it pays off:
-    const joaquim = {}
-    _.extend(joaquim, person);
+    //To make it pays off.. Create a new object extending from a superclass
+    const joaquim = _.extend(new Object(), person);
+    // Especialize it overriding what is needed
     joaquim.firstName = "Joaquim"
     joaquim.lastName = "Pinto"
     console.log(joaquim.fullName());
+
+
+    // Reflection... 
+
+    const maria = {
+        firstName: "Maria",
+        lastName: "EscritoErrado"
+    }
+
+    function cleanObj(obj) {
+        for (const prop in obj) {
+            obj[prop] = "Default";
+        }
+    }
+    cleanObj(maria);
+    console.log(maria);
+
 })();

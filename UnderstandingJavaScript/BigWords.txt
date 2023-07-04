@@ -76,3 +76,12 @@ arguments: Another name for parameters (you pass to a function).
 Callback Function: A function that is called as soon as a function triggers something!
 
 Function Currying : Creating a function copy of an existing function however with some preset properties!
+
+Sintactic Sugar: Under the Hood it is the same... But written diferently.
+
+Method Chaining: one method beeing called after another where one after another afects the parent methods.
+    In JS it can be made by "return this;"
+
+Transpile: Convert the sintax from one language to another
+
+Thennable Object: An object that has 'then' method.

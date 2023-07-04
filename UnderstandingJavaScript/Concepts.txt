@@ -248,3 +248,88 @@ Closure: It is an effect of js that happens when a context is created and while 
         One way to use inheritance in JS is using instead of "__proto__"  the _.extendOwn from underscorejs library
             It uses reflection to increase its object properties and methods without using __proto__ in which is unperforming
         Look for an example in "ReflectionExtensionInheritance"
+        The best way for doing it is using  "const subOBJ =  _.extend(new Object(), superOBJ)"
+            After that, specialize what is needed.
+
+    Classes in JS:
+        Operator 'new' creates a new empty object and atributes it to next function or class.
+            In case of a function just look after 'class1' in exercises.
+                'this' is used because you are invoking a function to create a new obj
+                'this' refers to the object created by 'new'
+                it runs that way if you dont return anything otherwise wont work
+                This is called >>>> Function Constructor!!! <<<<
+            
+            A prototype of a Function Constructor (when u use 'new') IS NOT the prototype of THE FUNCTION
+                In other words:  .__proto__ != .prototype in a function
+            Every object created by Function Constructor has its .protoype pointing to same properties and methods!
+                In other words when you get a FunctionConstructor.prototype.getX()... even the objects that was already been created will have these properties and methods.
+                    You will access it by .getX in the object!
+            Always put your methods in .prototype!
+                It will save space and permit quick method add to your class.
+                Check out in "Class2" e exercise
+            If you forgot to use 'new' JS will simply run the things inside it and return `undefined`...
+                It might cause problem in your code... an it is hard to see!
+                A convention that you might want to use is:
+                    - Normal functions use a itIsAFuntion
+                    - A class use a ItIsAFuntion (first letter capital)
+        Built-ins Function Constructors:
+            - Number ... it is not an integer or a primitive type ... it is diferent with diferent methods!
+            - String ... it is not a simple integer (primitive)... it is an object where each "index" is a property with lots diferents methods
+            - Date...
+            - Array
+            Be aware when using built in and treating them as primitive later... Because they are not primitives!
+        You could also use Pure Prototypal Inheritance using "Object.create(__superObject__)": check out in "PureInheritance" exercise
+            The fact is... when you use "Object.create()" internally it uses __proto__
+            It is new. In case browser dont suport, use a polyfill.
+        In ES6 it is possible to create a literal Class and its constructor... It is shown in "Class3"
+            Literal Class still is an OBJECT!!!!!!!!!!!! (...)
+            To extend it use... 'extends'
+                needs constructor
+                    super() optional to call parent constructor
+
+
+    Polyfill: add a feature to the browser...
+
+    Usefull Function Constructor for date (better than builtin Date): MomentJs
+        https://momentjs.com/
+
+    Array in JS:
+        It is an object!
+        They dont have and index... they actually have a name!!! A property name. It is a pair key-value
+            That s why you use [] for it.
+            It is a property name that mixes up as indexes..
+        It generates a problem... As it returns it props and methods, when you create a new method using .prototype it will polute all your arrays!
+            That is why it is better to simply use:
+            "for(let i=0; i < arr.length ; i++){
+                arr[i] = ...
+            }"
+        That is why there are "Push"/"Pop" method and not "Add"/"Delete".. Because deleting and adding it is as simple as adding and deleting a property of an object
+            Be carefull when doing it, tho.
+    
+
+    Strict Mode:
+        Put in the first line of your code // or in the first line of your function: 
+            "use strict";
+        Prevents misstyping
+        Flags all the files if used in one interelly
+
+    Learning More Using GitHub:
+        Go to GitHub>> Explore>> Frontend JavaScript Frameworks
+        https://jquery.com/
+            Development version comes with comments
+
+    Typescript --> It is a JS that have types... it transpile to a JS code.
+        https://www.typescriptlang.org/
+
+    Traceur ---> Transpile JS new features to a Polyfill!
+        https://github.com/google/traceur-compiler
+
+
+    ES6 features
+        https://github.com/lukehoban/es6features
+
+    Promise: An aproach introduced in ES6 to deal with  asynchronous events and callbacks
+        Promises are just an standardized object and/or aproach
+        Represents a future values...
+        async functions is executed unitil get to "await" ... (a promise)
+            then, this function sit there untill promise is resolved.
