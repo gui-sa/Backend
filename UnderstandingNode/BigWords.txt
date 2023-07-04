@@ -1,0 +1,5 @@
+
+Command Line Interface (CLI) :  It is a utility controlled by Line
+
+Arguments are values given to program that effects how it works
+
