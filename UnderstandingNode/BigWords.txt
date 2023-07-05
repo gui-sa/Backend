@@ -3,3 +3,8 @@ Command Line Interface (CLI) :  It is a utility controlled by Line
 
 Arguments are values given to program that effects how it works
 
+Machine Code: Programming languages that processors understands
+
+EcmaScript: It is a standart in which JavaScript is based on... because there are lots of engines
+
+JavaScript Engine: convert Js code into machine language

@@ -1,0 +1,25 @@
+
+Abstraction Levels (classical):
+   | Machine language
+   | Assembly language
+   | C/C++
+   | JavaScript | Node
+   v Softwares
+
+NODE IS WRITTEN IN C++
+    V8 --> Node's Core is WRITTEN in C++
+        V8 can be embeeded and extended using more C++ code, to extend even more the JavaScript capability
+            Node is an V8 embeeded in which was extended.
+
+
+Node Js is a server technology: using JS to create a server code.
+    Server: a computer performing services
+    Client requests to server
+        In the client side: JavaScript is complemented using others modules from BROWSER
+    To install it...
+        1. Install NVM
+        2. Install NPM
+        3. Using NVM : install node
+    https://nodejs.org/en
+    
+
