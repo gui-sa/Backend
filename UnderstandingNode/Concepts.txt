@@ -22,4 +22,8 @@ Node Js is a server technology: using JS to create a server code.
         3. Using NVM : install node
     https://nodejs.org/en
     
+Modules: They shouldnt interfere in your code, so it will run once in other context and no other function will be exported.. 
+    To export, use: "module.exports"... module.export RETURNS THAT THING Through the require!
+    
+
 
