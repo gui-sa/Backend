@@ -8,3 +8,10 @@ Machine Code: Programming languages that processors understands
 EcmaScript: It is a standart in which JavaScript is based on... because there are lots of engines
 
 JavaScript Engine: convert Js code into machine language
+
+Modules: reusable block of code that dont accidentally impact other code
+
+Common JS Module: an standard for how a module code should be structured
+
+First Class Function: Everything you can do with others type... You can do with Function. Function is just a Type.. an object
+
