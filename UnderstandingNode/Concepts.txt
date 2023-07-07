@@ -1,3 +1,5 @@
+Majority of its concepts comes from JavaScript
+
 
 Abstraction Levels (classical):
    | Machine language
@@ -24,6 +26,53 @@ Node Js is a server technology: using JS to create a server code.
     
 Modules: They shouldnt interfere in your code, so it will run once in other context and no other function will be exported.. 
     To export, use: "module.exports"... module.export RETURNS THAT THING Through the require!
+        To look for details, you should look for "Module.js"... you can access it using debugger.
+            By default when you use a path... it assumes it is ".js"
+            Enside "require" is puts all JS file inside an IIFE function, separating its context.
+                "module.exports" is what "require(path)" returns 
+    When the exact path to file.js doesnt exist, it will look for a FOLDER with that same name!
+        If it finds it: it will look for an "index.js" inside it and run!
+            It is usefull for creating big modules and organize things
+                It is also great to mention that inside "index.js" you can "require" the other files or folders.
+        It is also possible to import an entire object just by require("obj.json") it.
+            when require sees and JavaScript Object JSON, it returns it in module.exports automaticly
+        Check it ou in "Modules2"
+    "exports" points to the same object as "module.exports", however, it is not made for this return!
+        You can mutate it, or in other words: add methods and properties, and it will work just as "module.exports"
+            To avoid problems: JUST USE module.exports :)
+
+Module Patterns in Node:
+    1. module.exports = function(){};
+    2. module.exports.anythingHere = function(){}; 
+        When returned you will look for .anythingHere();
+        It is the same object, in case of requiring more than once
+        another way on doing it is by:
+            module.exports = {
+                anythingHere: function(){}; 
+            }
+    3. module.exports = new FunctionConstructorHere();
+        Even tho it requires should return a new one, NODE caches that object and passes the same reference! 
+        It includes cross files!
+    4. module.exports = FunctionConstructorHere;
+        In that case it will return the constructor and you will need to referenciate a new one using "new" when using it.. However, it will generate a new object of tha class.
+    5. ES6 brought a new way of doing it!
+        "export function anyName() {}" in the module, file
+        "import * as varName from './path';" in the consumer!
+    
+Some essential modules - builtins - that comes with node:
+    To import those just "require('itsName');"
+        https://nodejs.org/api/
+            "util"
+                util.log()
+                util.format()
+                checkout "Modules3"
     
 
+WEB SERVER checklist 
+    - Needs to reuse code : components
+    - Way to deal with files
+    - Way to deal with databases
+    - Communicate over internet by itself
+        - req/res : correctly
+    - Works that takes long time - long live
 

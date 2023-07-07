@@ -15,3 +15,6 @@ Common JS Module: an standard for how a module code should be structured
 
 First Class Function: Everything you can do with others type... You can do with Function. Function is just a Type.. an object
 
+Revealing module Pattern: revealing only properties and methods you wish in a module.
+
+Mutate: to change something, for example, to add properties and methods to an object
