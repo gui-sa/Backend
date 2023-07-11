@@ -67,7 +67,6 @@ Some essential modules - builtins - that comes with node:
                 util.format()
                 checkout "Modules3"
     
-
 WEB SERVER checklist 
     - Needs to reuse code : components
     - Way to deal with files
@@ -75,4 +74,32 @@ WEB SERVER checklist
     - Communicate over internet by itself
         - req/res : correctly
     - Works that takes long time - long live
+
+Event: Something that has happened in our app and we can respond to
+    Types:
+        System Events:
+            That comes from Operation System (internet and external sources)
+                C++ Core
+                libuv
+        Custom Events
+            Comes from JavaScript Library: you create by yourself
+                Event Emitter:
+                    Where custom events lives
+            JavaScript simulates an event... it doesnt really have and Event Objects
+
+    Event Emmiter... It is a handler of functions.
+        It is used for "Event Driven Architecture"
+            Functions are 'emmited' in FIFO.
+        A "justLike code" was made in "Emmiter1" and "Emmiter2" uses the nodeJs api 
+            https://nodejs.dev/pt/learn/the-nodejs-event-emitter/
+        An event Listenner is a code that runs to respond to an event.
+        A type is just a String or a Symbol :  beware of magic Strings... instead use as "Emmiter3"
+            "Emmiter3" creates a module that exports an object that works as an ENUMM!
+
+Inheritance in modules using 'util'
+    check it up in 'inherits1'
+    You can use .call() as constructor of a Function constructor
+        Check the "Inherits1", "Call&Apply", "Inherits2", "Inherits3", "Inherits4" and "Inherits5".
+            "One is complemented by another"__
+
 

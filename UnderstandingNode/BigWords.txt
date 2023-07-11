@@ -18,3 +18,5 @@ First Class Function: Everything you can do with others type... You can do with 
 Revealing module Pattern: revealing only properties and methods you wish in a module.
 
 Mutate: to change something, for example, to add properties and methods to an object
+
+Magic String: String that has a special meaning in our code. It is acctualy dangerous because of typo.
