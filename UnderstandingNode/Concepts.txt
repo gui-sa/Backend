@@ -1,3 +1,8 @@
+NODE TOOLS!
+    EVENTS
+    STREAMS
+    ASSYNC
+
 Majority of its concepts comes from JavaScript
 
 
@@ -80,8 +85,13 @@ Event: Something that has happened in our app and we can respond to
         System Events:
             That comes from Operation System (internet and external sources)
                 C++ Core
-                libuv
-        Custom Events
+                    libuv
+                        https://libuv.org/
+                        Event Loop always checking Queue
+                            It has a Queue inside it
+                        OS puts events in this QUEUE
+                        libuv callsbacks because it is alive: JavaScript Events!!
+        Custom Events --> From JavaScript
             Comes from JavaScript Library: you create by yourself
                 Event Emitter:
                     Where custom events lives
@@ -95,11 +105,98 @@ Event: Something that has happened in our app and we can respond to
         An event Listenner is a code that runs to respond to an event.
         A type is just a String or a Symbol :  beware of magic Strings... instead use as "Emmiter3"
             "Emmiter3" creates a module that exports an object that works as an ENUMM!
+    Event Driven Non-Blocking I/O in V8 JavaScript
 
 Inheritance in modules using 'util'
     check it up in 'inherits1'
     You can use .call() as constructor of a Function constructor
         Check the "Inherits1", "Call&Apply", "Inherits2", "Inherits3", "Inherits4" and "Inherits5".
             "One is complemented by another"__
+            
+JavaScript is not good on encoding: usually a buffer is used for it.
+
+File and fs "node" module.
+    check it up the exercise "file1" and "file2"
+
+Assync in Node:
+    V8 pass thru the app.js and run things single threaded... when it encounter something assync, it asks SO or external source.
+    Node runs an event Loop that keeps looking in a queue.. an event queue for external sources of action / SO.
+        When it finds something it puts it in V8 queue that as soons as it finishes one context: start another!
+            V8 has just one instance and it is single threaded, however, libuv is not, so: it creates lots of events and puts is in queue.
+                The event loop is single threaded but the othres executions contexts is not!
+
+Node like STREAMS and CHUNKS! Because it helps it on beeing performant:
+    To avoid memory consumption explosion, node works with STREAM:
+        Stream is the usage of pieces of data none as CHUNK.
+        Stream are event Emmiters
+        Types of streams (abstract class -- from node perspective):
+            Readable
+            Writable
+            Duplex
+            Transform
+            Passthough
+        There is examples: "File3", "File4", "File5"
+            https://nodejs.org/api/stream.html
 
 
+http_parser:
+    Written in C
+        gets http requests and responses, break them apart and treat them up!
+
+
+http builtin module:
+    Every event from http receives two params: req, res
+        req: request
+        res: response (it is a STREAM )
+
+NPM: "Node Package Manager" the largest ecossystem of open source code 
+
+Dependencies :  code that another set of code depends on to work properly
+
+Semantic Versioning (SemVer): Specifing what version or set of code this is... and what it implements or changes.
+    vLL.MM.SS
+        The idea is: just looking at the version number: having an idea what has happened 
+        LL : MAJOR CHANGES --> Big changes! Your code probably face problems with compatibility.
+        MM : MINOR CHANGES --> Features added. Your code will probably be fine
+        SS : PATCH --> Bug fixes. Your code will work fine
+    https://semver.org/
+
+NPM Registry: npm comes with Node JS 
+    https://www.npmjs.com/
+    codes installed via npm comes from the link above
+    "npm install <package>:<version> --save" --> ":<version" is optional... so is "--save"
+        this way it will e installed as a "NEED" package in packege.json
+    Every package has its own dependencies that has its own dependencies.
+        So, modules might be duplicated inside application
+
+
+NPM usefull Commands:
+    https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
+    "npm init" --> It starts Node, NPM, application and modules
+        brings you "package.json"
+    "npm install <package> --save"
+        When something is installed a new folder is created: "node_modules"
+        package.json will be updated... "dependencies" will appear and there will be the package name and its versions inside it
+            In version if you see...:  "^Something.Something.Something"... this "^" mean that the next time you reinstal the modules: Node can update the version automatically maintaining the major changes version.
+                "^XX.XX.XX" --> node can update minor changes and patch changes, but not major changes
+            It also might be "~Something.Something.Something" and it will update only the Patch changes
+            Without any symbol, node will always maintain that specific version for you.
+    "npm install <package> --save-dev" a package is installed as dev dependencies.
+        "devDependencies" will be appear in your package.json
+    "npm install -g <package>" --> Install a package in ALL of node JS applications
+        nodemon is usually installed globally
+    "npm install" --> npm will look the "package.json" and following the rules: reinstall all the packages and modules.
+    "npm update" --> Update all the packages following the package.json rules
+
+
+Usefull Modules from NPM:
+    --> "moment": usefull to work with date and time!
+    --> "jasmine-node": used for creating node automated tests 
+        Usually used on development only.
+    --> "nodemon": keeps rebooting your node application to quick look and quick test It
+        Usually used on development only. However, installed globally
+            It is because nodemon should be called by SO
+                "nodemon <file.js>"
+    --> "express": it is a web server framework. It so much more complete than just http!
+        Routing is well implemented, optimized
+        Placeholder is well implemented, optimized

@@ -20,3 +20,59 @@ Revealing module Pattern: revealing only properties and methods you wish in a mo
 Mutate: to change something, for example, to add properties and methods to an object
 
 Magic String: String that has a special meaning in our code. It is acctualy dangerous because of typo.
+
+Asyncronous: More than one process running simultanously
+    V8 is not assync, but node does some tasks that way... Because of C++
+
+Syncronous: One process at time.
+    Node is Assyncronous while Js is Syncronous
+
+Buffer: Temporary holding space for data.
+    They are intentionally limited for infraestructure limitation
+
+Stream: Sequence of data made available over time
+    pieces of that data eventually combine into a whole
+
+Encoding data: To get a data and pass it to another notation.. The main context is from decimal or charset to binary
+    In ES6 it came with JS as Buffer.
+        Check it up in "Buffer1" and "Buffer2"
+            TypedArray is not usually used
+
+Error-First Callback: Object receives an error object as its first parameter
+    It is a standard
+        If the first parameter returns 'null': Everything went well, otherwise the first parameter will receive an error object!
+CHUNK : piece of data  being sent Through a STREAM. A data is split into chunks
+
+Abstract class: A type of constructor you never work directly with, but, inherit from
+
+Pipe: Connects two streams... One that reads and another that writes
+
+MethodChaining: A method return an object that can be reused for another methods that will return it!
+
+Protocol: A set of rules two sides agree to  use when communicating
+
+MIME type: a standard for specifying the type of data being sent (Multiporpuse Internet Mail Extension)
+    Content-Type...
+
+Template: Text designed to be basis to others texts
+
+API: "Application Programming Interface".. It is an interface for some service and/or consumable.
+    Usually it is a set of URL prepared to receive and send something specific
+        Usually information is passed using JSON format: due its reduced overhead
+
+ENDPOINT : one URL in WEB API
+    An endpoint might do lots of thing depending on HTTP request type
+
+Serialize :  Translating an object into a format that can be stored and transferred
+    Deserialize is the oposite
+        Example:
+            - JSON
+            - CSV
+            - XML
+
+Routing: mapping HTTP request to content
+
+Package: collection of code
+
+Package Management system: Automates installing and updating packages
+    Deals with versions and dependencies 
