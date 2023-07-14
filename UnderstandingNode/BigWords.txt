@@ -76,3 +76,17 @@ Package: collection of code
 
 Package Management system: Automates installing and updating packages
     Deals with versions and dependencies 
+
+Environment Variables : Global Variables specific to Environment ( server ) our code lives in
+
+HTTP METHOD: specifies the type of action the request whishes to make.
+    GET
+    POST
+    DELETE
+    PATCH
+    others (also called verbs)
+
+Midleware: code that sits between two layers of software
+
+Static: Not processed by our code in any way. 
+    Usually they sit in '/public' folder ... you create it.

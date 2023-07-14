@@ -198,5 +198,26 @@ Usefull Modules from NPM:
             It is because nodemon should be called by SO
                 "nodemon <file.js>"
     --> "express": it is a web server framework. It so much more complete than just http!
+        https://expressjs.com/
         Routing is well implemented, optimized
         Placeholder is well implemented, optimized
+            Some usefull functions:
+                "var express = require('express');"
+                "var app = express();"
+                "app.get(req.url desired, function(req,res){})" --> in case of GET method in the req.url
+                "app.post(req.url desired, function(req,res){})" --> in case of POST method in the req.url
+                (all HTTP methods and matching patterns... getting params, etc)
+                    res.send()
+                        Content-Type is automatically handled
+                    res.json()
+                        Sends automatically a stringify object
+                "app.listen(port);" --> Starts the server in a port
+                "app.use(htmlRoute, express.static(`__dirname/realRoute`))"...
+                    app.use sets up Midleware.
+                    For example, extra js and css that html file might require...
+                        browser will ask and express will handle that for us 
+                "app.use(route,function(req,res,next){next();})" --> for custom midlewares...
+                    In fact, others function are midlewares!!
+                    https://expressjs.com/en/guide/using-middleware.html
+                    https://expressjs.com/en/resources/middleware.html
+
