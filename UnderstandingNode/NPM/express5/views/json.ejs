@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title> Página de exemplo estrutura básica </title>
+    <meta charset="utf-8">
+    <meta name="author" content="Guilherme">
+    <meta name="Description" content="Learning basics">
+    <meta name="keywords" content="html5, tecnologia">
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head> 
+
+<body>
+    <h1>Just a json</h1>
+    <p> A Script will run... sending a JSON!</p>
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/personjson",
+            data: JSON.stringify({
+                firstName: "Guilherme",
+                lastName: "Agostini"
+            }),
+            dataType: "json",
+            contentType: 'application/json'
+        });
+    </script>
+</body>
+
+</html>

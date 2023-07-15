@@ -220,4 +220,24 @@ Usefull Modules from NPM:
                     In fact, others function are midlewares!!
                     https://expressjs.com/en/guide/using-middleware.html
                     https://expressjs.com/en/resources/middleware.html
-
+        Template Engine: usually is used togheter with express... to complete and update the html file
+            "app.set('view engine', 'ejs');"
+                In this example using ejs 
+                    it looks for file inside "views" folder
+                There are numerous:
+                    - ejs
+                    - handlebars
+                    ...
+        QueryString... Is passed in URL after ?
+            example
+                /person/100?somethingX=100&somethingZ=102
+                    in this case QueryString somethingX is 100 and something Z is 103...
+                        In case of having others, we separe them using '&'
+            In the Node it is available in req.query.somethingX or ...
+        To deal with a http post method body parser we need to use a third party
+            body-parser is one of installs that does that to us.
+                It usually is passed in .post as an extra callback function...
+                    remember that .post is actually a midleware... so you are technically setting up a new midleware to deal with it
+        There is express.Router() that permits a better organization for combining routes!!
+            (they usually are used in midlewares... remember everything kind of is a midleware) 
+        There also have express-generator that can fast generate an express project for you.

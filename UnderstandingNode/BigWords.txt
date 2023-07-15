@@ -90,3 +90,6 @@ Midleware: code that sits between two layers of software
 
 Static: Not processed by our code in any way. 
     Usually they sit in '/public' folder ... you create it.
+
+REST API :  An architectural style on building apis where you handle API by HTTP methods..
+    Server stateless
