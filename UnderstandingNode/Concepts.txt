@@ -228,6 +228,9 @@ Usefull Modules from NPM:
                     - ejs
                     - handlebars
                     ...
+            Template engines are HTML/CSS/JS of frontend being processed in the server side
+                REACT, ANGULAR and others frontend frameworks manipulate the DOM directly in the browser.
+                    They are just JavaScript
         QueryString... Is passed in URL after ?
             example
                 /person/100?somethingX=100&somethingZ=102
@@ -241,3 +244,30 @@ Usefull Modules from NPM:
         There is express.Router() that permits a better organization for combining routes!!
             (they usually are used in midlewares... remember everything kind of is a midleware) 
         There also have express-generator that can fast generate an express project for you.
+    --> mysql
+    --> mongoose
+    --> express-handlebars: template engine 
+        https://www.npmjs.com/package/express-handlebars
+    
+SQL - Structured Query language - language used to manage an database
+    The answer from a database will be an array of objects, where each column is an atribute.
+
+NoSQL - Variety of technology that are alternatives to tables and SQL.
+    - usually information are saved as JSONs or documents
+
+One suggestion is to build API First e after that build the platform
+
+Three tier Architecture for backend API
+    Controller
+        '/' routes services and interfaces with client
+    Services
+        Other logics
+    Persistance
+        Saving and accessing databases
+                                                                                                                                                                                                            
+
+
+
+
+
+

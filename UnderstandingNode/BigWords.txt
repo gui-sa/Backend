@@ -93,3 +93,27 @@ Static: Not processed by our code in any way.
 
 REST API :  An architectural style on building apis where you handle API by HTTP methods..
     Server stateless
+
+
+STACK: The combination of all technologies used to build a piece of software
+
+MEAN STACK: JS stacks to easil build a Web Application
+    M -->MongoDB
+    E -->Express
+    A -->AngularJS
+    N -->NodeJS
+
+DOM - Internall Browser structure to manage web pages
+    'Document Object Model'
+    Browser gives JS Engine the ability to manipulate those
+    Browser uses DOM to manipulate WEB page ...
+        Browser gives the ability to JS to manipulate the DOM
+    So.. Node sends a String.. a html string:
+        Browser interprets this string and creates the DOM.. (string is no longer used)
+            Creating the DOM tree... an hierarch 
+                example: HTML, H1, P, HEAD, BODY...
+
+Full Stack Developer: A developer who knows all pieces of stack in web developiment
+
+SEED data --> Initial data to a database
+
