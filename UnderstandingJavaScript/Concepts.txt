@@ -64,6 +64,8 @@ let: works just like var and is setted up just like var in the creation phase (a
         So, when you use it inside a for, each one is a new variable...
             BLOCK SCOPING
 
+Variable scoping in javascript is done by lexycal scoping.
+
 Javascript has hooks with Rendering Engine and HTTP Requests...
 
 Assincronous: Others codes and engines of Browser running tasks
@@ -81,7 +83,7 @@ There are 5 Primitive Types in JS (even thought you dont choose it directly):
     3. Boolean -- true/false
     4. Strings -- cadeia de chars
     5. Numbers -- always float
-    6. Simbols -- ?
+    6. Simbols -- They are string that are UNIQUES and avoid overwrite by redeclaration of the property.
 
 Precedence and Associtivity: The Higher, the one that is called first.
     https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
@@ -333,3 +335,4 @@ Closure: It is an effect of js that happens when a context is created and while 
         Represents a future values...
         async functions is executed unitil get to "await" ... (a promise)
             then, this function sit there untill promise is resolved.
+	The .then() method takes up to two arguments; the first argument is a callback function for the fulfilled case of the promise, and the second argument is a callback function for the rejected case. 
