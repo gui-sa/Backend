@@ -30,3 +30,17 @@ Bom... No console de qualquer pagina WEB de um browser, voce consegue brincar :)
                     Que retorna todas as possiveis caracteristicas (CSS)
         document.querySelectorAll('')
             Seleciona todos os elementos que utilizaram aquele call... retornando uma lista de objetos.
+        Existem outras funçoes mais especificas, porem, querySelector e o querySelectorAll são os mais utilizados pois sao mais gerais.
+    
+ 2. Depois de selecionado voce manipula o(s) elementos em si:
+      .textContent --> É a propriedade que retorna o texto intra elementos
+      .innerHTML --> Cria um novo objeto interno a este
+      .addEventListener(Symbol,Callback) --> Setta um novo evento com base nos simbolos
+          $ 'click' --> Usado para setar um evento de click no ambiente
+          $ 'load' --> Usado para setar algo no carregamento... geralmente usado com objeto window.
+          $ .setAttribute('alt','Nova propriedade do elemento, como por exemplo o alt')
+          $ .forEach (CallBack) --> Para iterar pela lista resultante da selecao
+
+
+---------// ------------// ----------------
+
