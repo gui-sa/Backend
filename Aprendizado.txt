@@ -1,0 +1,13 @@
+Imagens:
+    Se a imagem tiver significado UTIL à pagina: use HTML
+    Se a imagem tiver significado DECORATIVO: use CSS background-image.
+    Imagem vetorial é mais leve, bonita e escalonavel
+        O que acontece é q voce não consegue fazer qualquer coisa com com SVG
+    .svg >> Vetorial... Não importe por tag img
+    .jpg / .jpeg >> Nenhuma diferença entre si >> Bitmap e Comprimida
+    .png >> Bitmap, Comprimida e aceita camada de transparência Leve (pode ser "pouco transparente")
+    .gif >> Bitmap, Leve e aceita transparência dura (Ou é transparente ou não é)
+    .webp >> +Comprimidos sem perder qualidade mas sem muito suporte
+    .avif >> +Comprimidos sem perder qualidade mas sem muito suporte
+
+CANIUSE >> Site para dizer o suporte das coisas nos browsers
