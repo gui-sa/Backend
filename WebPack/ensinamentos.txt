@@ -1,0 +1,72 @@
+https://www.youtube.com/watch?v=hJ7Rg1821Q0&t=1s
+https://www.youtube.com/watch?v=fp9eVtkQ4EA
+
+To analise the internet efects on development, you can go to "Network" on Inpect tab and change to "Speed 3G".
+On images the first and mainly things you should do is: TO CHANGE THE SIZE OF IMAGE DOWNLOADED BASED ON VIEWPORT.
+The second UX thing you can do is to: instead of load an entire image, you can just download a must lighert blurry version, and so when finished downloading, that blurry image will be changed to the original one.
+The final thing you can do is: loading JUST what you can see first and loading the rest just as demanded in a process called "lazy loading"
+
+How to implement LAZY LOAD IN HTML:
+ - In the tag image use the property named 'loading="lazy"'... The default is the 'loading="eager"'
+ - To work properly, all the lazy images should have width and height html property (because the browser needs to know its size)
+
+
+How to implement BLUR-LOAD in HTML:
+  - Put all images inside a of a div, and put a class in that div that:
+    + Adds using CSS background-image a SMALLER VERSION of your original image that covers (background-size : cover and background-position: center) all the original space 
+    + The tag img should have object-position to center and object-fit to cover 
+    ! To generate that image you can use any tool necessary 
+    ! To hide the image untill it has completely downloaded you can use JS:
+            const blurDivs = document.querySelectorAll(".blur-load");
+            blurDivs.forEach(div =>{
+                const img = div.querySelector("img");
+                function loaded(){
+                    div.classList.add("loaded")
+                }
+                if (img.complete){
+                    loaded();
+                }else{
+                    img.addEventListener("load",loaded)
+                }
+            });
+        ==> Then you need to add a CSS class named:
+            .blur-load > img {
+                opacity: 0;
+                transition: opacity 200ms easy-in-out
+            }
+            .blur-load.loaded > img{
+                opacity:1;
+            }
+
+    + You can add an animation to show the user that the image is loading:
+        using sudo elements ::before or ::after
+            sudo elements is elements that require a content and is set right before or after you original class or element.
+        
+        You can use .blur-load::before {
+            content:"";
+            position: absolute;
+            inset:0;
+            animation: pulse 2.5s infinite;
+        }
+
+        .blur-load{
+            //add with others:
+            position: relative;
+        }
+        //to create an animation function
+        @keyframes pulse{
+            0%{
+                background-color: rgba(255,255,255,0);
+            }
+            50%{
+                background-color: rgba(255,255,255,0.1);
+            }
+            100%{
+                background-color: rgba(255,255,255,0);
+            }
+        }
+
+        //and after loaded remove that ::before
+        .blur-load.loaded::before {
+            content:none;
+        }

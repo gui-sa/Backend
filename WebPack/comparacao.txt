@@ -1,0 +1,31 @@
+! Vale lembrar que mais um indicador importante seria o RAILs
+
+Sem implementar Lazy Loading e sem implementar Responsive images:
+    Performance: 67
+    Acessibility: 100
+    Best Practices: 95
+    SEO: 90
+
+Implementando Lazy Loading simples e sem implementar Responsive images:
+    Performance: 84
+    Acessibility: 100
+    Best Practices: 95
+    SEO: 90
+
+Implementando Lazy Loading simples com imagens pre recortadas para o tamanho certo:
+    Performance: 100
+    Acessibility: 100
+    Best Practices: 100
+    SEO: 90
+
+Implementando Lazy Loading simples com imagens pre recortadas para o tamanho certo e meta description tag:
+    Performance: 100
+    Acessibility: 100
+    Best Practices: 100
+    SEO: 100
+
+Implementando Lazy Loading com pre-imagem blurred e sem implementar Responsive images:
+    Performance: 
+    Acessibility: 
+    Best Practices: 
+    SEO: 

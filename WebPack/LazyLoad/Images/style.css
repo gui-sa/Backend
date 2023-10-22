@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+    color: blue;
+    font-weight: 800;
+}
+
+p{
+    font-size: 16px;
+    margin: 30px 0;
+}
+
+.blur-load{
+    position: relative;
+    background-image: ;
+}
