@@ -75,3 +75,15 @@ Observação de um bro:
     Caso clientes com js sejam importantes. Voce sempre tem que pensar neles.
     Para isso voce não precisa ficar se fodendo no <noscript>...
         Voce pode simplesmente adicionar os efeitos especiais pelo js!
+            Dessa forma no pior dos casos, se o cliente desabilitar o js, ele fica com a pagina sem os efeitos extras, mas pelo menos entende.
+
+A ideia nessa atividade:
+
+1) JS que interrompe o aparecimento da imagem grande (e depois devolve quando 100% carregada)
+2) JS que coloca a animação de carregamento daora.
+3) Adicionar Lazy Loading
+4) Aumentar a UX com uma thumb super leve que carrega pelo CSS.
+
+Então no pior dos casos:
+
+O cliente vai ficar sem uma animação de carregamento e a imagem vai aparecer aos poucos de cima para baixo... Mas ela aparece!

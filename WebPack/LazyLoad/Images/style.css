@@ -34,13 +34,14 @@ img{
     position: relative;
     background-size: cover;
     background-position: center;
+    margin: 200px 0;
 }
 
 .blur-load::before{
     content: "";
     position: absolute;
     inset: 0;
-    animation: pulse 2.5s infinite;
+    animation: var(--animation-set, none);
 }
 
 @keyframes pulse{
@@ -60,7 +61,6 @@ img{
 }
 
 .blur-load > img{
-    opacity: 0;
     transition: opacity 200ms ease-in-out;
 }
 

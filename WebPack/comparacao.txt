@@ -25,7 +25,7 @@ Implementando Lazy Loading simples com imagens pre recortadas para o tamanho cer
     SEO: 100
 
 Implementando Lazy Loading com pre-imagem blurred e sem implementar Responsive images:
-    Performance: 
-    Acessibility: 
-    Best Practices: 
-    SEO: 
+    Performance: 100
+    Acessibility: 100
+    Best Practices: 100
+    SEO: 100
