@@ -1,0 +1,1 @@
+Para funcionar, voce precisa colocar 16 imagens de alta qualidade nos assets

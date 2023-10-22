@@ -70,3 +70,8 @@ How to implement BLUR-LOAD in HTML:
         .blur-load.loaded::before {
             content:none;
         }
+
+Observação de um bro:
+    Caso clientes com js sejam importantes. Voce sempre tem que pensar neles.
+    Para isso voce não precisa ficar se fodendo no <noscript>...
+        Voce pode simplesmente adicionar os efeitos especiais pelo js!
