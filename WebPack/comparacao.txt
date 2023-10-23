@@ -24,24 +24,24 @@ Implementando Lazy Loading simples com imagens pre recortadas para o tamanho cer
     Best Practices: 100
     SEO: 100
 
-Implementando Lazy Loading com pre-imagem blurred e sem implementar Responsive images:
+Implementando Lazy Loading com pre-imagem blurred e sem implementar Responsive images no mobile:
+    Performance: 98
+    Acessibility: 100
+    Best Practices: 100
+    SEO: 100
+    +
+    Tempo Total de Carregamento no FAST-3G: ~ 50000ms
+
+    
+Implementando Lazy Loading com pre-imagem blurred e COM Responsive images no mobile:
     Performance: 100
     Acessibility: 100
     Best Practices: 100
     SEO: 100
     +
-    Tempo Total de Carregamento no FAST-3G: 
+    Tempo Total de Carregamento no FAST-3G: ~ 11000ms
 
-    
-Implementando Lazy Loading com pre-imagem blurred e COM Responsive images:
-    Performance: 
-    Acessibility: 
-    Best Practices: 
-    SEO: 
-    +
-    Tempo Total de Carregamento no FAST-3G: 
-
-
+Aqui, implementar as imagens responsivas garantiu uma otimização de quase 5x no tempo final!! Fora a melhora no SEO
 
 ### Responsive:
 

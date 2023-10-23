@@ -20,9 +20,17 @@ dirAssets.forEach( img =>{
 
 dirAssets.forEach( img =>{
     sharp("./assets/" + img)
-    .resize(720,430, {
+    .resize(1200,720, {
         fit:"cover"
     })
     .toFile(pathBuild + "large-size-"+img);
+});
+
+dirAssets.forEach( img =>{
+    sharp("./assets/" + img)
+    .resize(750,430, {
+        fit:"cover"
+    })
+    .toFile(pathBuild + "medium-size-"+img);
 });
 
