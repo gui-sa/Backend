@@ -29,3 +29,34 @@ Implementando Lazy Loading com pre-imagem blurred e sem implementar Responsive i
     Acessibility: 100
     Best Practices: 100
     SEO: 100
+    +
+    Tempo Total de Carregamento no FAST-3G: 
+
+    
+Implementando Lazy Loading com pre-imagem blurred e COM Responsive images:
+    Performance: 
+    Acessibility: 
+    Best Practices: 
+    SEO: 
+    +
+    Tempo Total de Carregamento no FAST-3G: 
+
+
+
+### Responsive:
+
+Sem Responsive Images no mobile:
+    Performance: 100
+    Acessibility: 100
+    Best Practices: 95
+    SEO: 100
+    +
+    Tempo Total de Carregamento no FAST-3G: 
+
+Com Responsive Images no mobile:
+    Performance: 100
+    Acessibility: 100
+    Best Practices: 95
+    SEO: 100
+    +
+    Tempo Total de Carregamento no FAST-3G: 

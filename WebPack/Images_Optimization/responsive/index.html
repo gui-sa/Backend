@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Testando Boas Praticas para Imagens: imagens responsivas">
+    <link rel="stylesheet" href="./style.css">
+    <title>Imagens Responsivas</title>
+</head>
+<body>
+    <main>
+        <h1> 
+            Nem sempre usar a maior definição possível é o caminho da qualidade
+        </h1>
+        <p>
+            O olho tem um limite de percepção de pixels... As imagens são, geralmente, os elementos mais pesados em uma pagina WEB. <br>
+            Portanto, faz sentido otimizar a resolução da imagem conforme o viewport: RESPONSIVE IMAGES <br>
+            <br>
+            Nesse exemplo vamos usar uma API que facilita essa observação...
+        </p>
+        <img src="https://placehold.co/1960x1080/png" srcset="
+            https://placehold.co/1960x1080/png 1960w,
+            https://placehold.co/750x430/png 750w,
+            https://placehold.co/200x110/png 200w
+        " 
+        sizes="100vw"
+        alt="Imagem Teste">
+    </main>
+    <footer>
+        <script src="./script.js" async></script>
+    </footer>
+</body>
+</html>

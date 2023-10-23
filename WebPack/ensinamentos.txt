@@ -1,6 +1,7 @@
 https://www.youtube.com/watch?v=hJ7Rg1821Q0&t=1s
 https://www.youtube.com/watch?v=fp9eVtkQ4EA
 
+
 To analise the internet efects on development, you can go to "Network" on Inpect tab and change to "Speed 3G".
 On images the first and mainly things you should do is: TO CHANGE THE SIZE OF IMAGE DOWNLOADED BASED ON VIEWPORT.
 The second UX thing you can do is to: instead of load an entire image, you can just download a must lighert blurry version, and so when finished downloading, that blurry image will be changed to the original one.
@@ -87,3 +88,13 @@ A ideia nessa atividade:
 Então no pior dos casos:
 
 O cliente vai ficar sem uma animação de carregamento e a imagem vai aparecer aos poucos de cima para baixo... Mas ela aparece!
+
+
+### Responsive Images:
+
+Existe uma propriedade nas imagens chamado "srcset="URL1 200w, URL2 700w, URL3 1600w"" ==> Nesse caso ele vai usar cada URL e escolher automaticamente entre as opcoes aquelas que nao vao atrapalhar a legibilidade da pagina
+Ele sempre vai tentar te dar a menor imagem possivel sem que a diferença de qualidade seja perceptivel
+'sizes="100vw"' é um atributo usado para re-referenciar a imagem no viewport ao verdadeiro tamanho em que ela esta usando do viewport
+
+Para melhorar a qualidade da UX em caso de imagens completamente distintas: voce pode usar a tag picture...
+    Mas nesse caso voce vai aumentar a UX a custo de PERFORMANCE
