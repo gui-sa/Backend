@@ -51,7 +51,7 @@ Sem Responsive Images no mobile:
     Best Practices: 95
     SEO: 100
     +
-    Tempo Total de Carregamento no FAST-3G: 
+    Tempo Total de Carregamento no FAST-3G: 5085ms
 
 Com Responsive Images no mobile:
     Performance: 100
@@ -59,4 +59,6 @@ Com Responsive Images no mobile:
     Best Practices: 95
     SEO: 100
     +
-    Tempo Total de Carregamento no FAST-3G: 
+    Tempo Total de Carregamento no FAST-3G: 5084ms
+
+Apesar de não ter tido uma diferenca significativa nos testes, vale lembrar que com a diminuicao no tamanho das imagens a performance tende a aumentar BASTANTE
