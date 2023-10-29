@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Testando tecnica de Parallax e Observer em Javascript">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <h2 id="logo">Logo</h2>
+        <nav class="nav">
+            <a href="#" class="button active">Home</a>
+            <a href="#" class="button">About</a>
+            <a href="#" class="button">Service</a>
+            <a href="#" class="button">Contact </a>
+        </nav>
+    </header>
+    <main>
+        <section class="parallax">
+            <div id="scroll">
+                <h2>Scroll Parallax</h2>
+            </div>
+            <img src="./assets/hill1.png"
+                width="1366"
+                height="768" 
+                alt="Colina Distante"
+                id="hill1"
+                >
+            <img src="./assets/hill2.png"
+                width="1366"
+                height="768" 
+                alt="Colina Media Esquerda"
+                id="hill2"
+                >
+            <img src="./assets/hill3.png"
+                width="1366"
+                height="768" 
+                alt="Colina Media Direita"
+                id="hill3"
+                >
+            <img src="./assets/hill4.png"
+                width="1366"
+                height="768" 
+                alt="Colina Proxima Esquerda"
+                id="hill4"
+                >
+            <img src="./assets/hill5.png"
+                width="1366"
+                height="768" 
+                alt="Colina Proxima Direita"
+                id="hill5"
+                >
+            <img src="./assets/tree.png"
+                width="1366"
+                height="768" 
+                alt="Arvore"
+                id="tree"
+                >
+            <img src="./assets/leaf.png"
+                width="1366"
+                height="768" 
+                alt="Folha"
+                id="leaf"
+                >
+            <img src="./assets/plant.png"
+                width="1366"
+                height="768" 
+                alt="Planta"
+                id="plant"
+                >
+        </section>
+
+        <section class="sec">
+            <h1>Scroll Animations</h1>
+            <p>
+                Nesse exemplo, Javascript é utilizado para linkar o valor do scroll e realizar um repaint no browser a cada vez que voce sobe ou desce.
+            </p>
+            <h2>Prós</h2>
+            <p>
+                A experiência do usuario que possui um bom dispositivo, Javascript Ligado e uma boa internet é LINDA.
+            </p>
+            <h2>Contra</h2>
+            <p>
+                É de se esperar que a performance será pessima. Os clientes que realmente vão conseguir usufruir dessa artemanha serão poucos.
+            </p>
+            <h2>Melhorias</h2>
+            <p>
+                Estabelecer uma interface minima que utiliza pouco recurso. Precisa pensar também no comportamento do site quando esse for responsivo.
+            </p>
+            <h2>Extra</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit augue in eros mattis, a commodo nisl cursus. Morbi finibus sit amet quam vel hendrerit. Vivamus placerat augue eu ullamcorper dapibus. Sed eu egestas massa, id euismod nisi. Ut accumsan diam non ullamcorper gravida. Suspendisse tristique mauris nisi, sit amet feugiat tortor convallis et. Fusce a efficitur turpis. Proin vehicula purus sit amet arcu ornare, a iaculis sem efficitur. Nam lacinia tellus eget scelerisque posuere.
+            </p>
+            <p>
+                Vestibulum mattis, nisi vitae interdum tincidunt, risus metus fringilla odio, eget blandit nunc ligula eu odio. Nunc arcu purus, faucibus at laoreet pellentesque, semper sit amet lectus. Mauris metus odio, dictum at nunc quis, sagittis ultricies nunc. Quisque sit amet rhoncus libero, eu finibus nisi. Maecenas pellentesque nulla fermentum ante viverra vulputate. Integer eu tellus felis. Aenean sagittis, dolor quis pulvinar venenatis, arcu turpis pharetra risus, eu suscipit ligula elit in massa. In hac habitasse platea dictumst. Curabitur efficitur augue et nunc auctor, bibendum rutrum justo accumsan. Praesent massa tortor, auctor eu faucibus quis, sodales eu enim. Sed porttitor hendrerit tempus. Vivamus libero felis, eleifend eu pharetra eu, varius a felis. Pellentesque non eros bibendum, ullamcorper est sed, laoreet nibh. In hac habitasse platea dictumst.
+            </p>
+            <p>
+                Duis in justo in augue imperdiet ultrices in quis dolor. Morbi id eros risus. Phasellus quis enim ullamcorper, volutpat velit id, dictum elit. Ut a nulla consequat purus ultrices efficitur. Curabitur in eros consectetur, fermentum eros vitae, tristique est. Donec pellentesque nisi at mi ultricies, id tincidunt dolor ultrices. Cras ultrices orci nec diam porttitor blandit. Proin semper ex risus, quis sagittis dui cursus vel. Nullam sit amet tortor rutrum, auctor dolor imperdiet, pretium eros. Donec varius nisi eros, sed tempus turpis aliquam in. Nunc id nibh id ex vestibulum aliquet. Nullam turpis ligula, porttitor in tellus sit amet, fringilla maximus leo. Sed feugiat est consequat dapibus dictum. Sed semper malesuada odio sit amet scelerisque. Donec mollis, purus ac sollicitudin imperdiet, diam urna posuere velit, ac euismod ex mi in velit.
+            </p>
+            <p>
+                Curabitur lacinia feugiat libero nec dictum. Sed volutpat sapien sit amet augue congue, at venenatis nisl commodo. Sed id lectus dignissim quam posuere euismod. Nullam nec scelerisque nulla, nec pharetra purus. Vivamus sed massa libero. Donec auctor blandit ipsum et vulputate. Sed ante est, ultricies nec lobortis et, gravida eu nulla. Donec nec vulputate tortor, sit amet iaculis purus. Maecenas vitae vestibulum dui, rhoncus imperdiet lorem. Nunc et ipsum tempus neque laoreet mollis. Etiam pellentesque eros et magna luctus, vitae egestas sapien tincidunt. Curabitur malesuada bibendum mauris, non ultrices odio ultricies ornare. Mauris hendrerit, justo quis tincidunt congue, odio turpis sollicitudin eros, ut aliquam odio enim vel neque. Aliquam libero sapien, finibus ac enim vel, laoreet euismod metus. Integer mauris libero, pharetra et nibh nec, ultricies fringilla dolor. Integer lacinia semper aliquet.
+            </p>
+
+        </section>
+    </main>
+    <footer>
+        <script src="./script.js"></script>
+    </footer>
+</body>
+</html>
