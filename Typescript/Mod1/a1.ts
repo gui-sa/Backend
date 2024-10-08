@@ -1,0 +1,1 @@
+type WeatherCondition = "ensolarado"|"nublado"|"chovendo";
